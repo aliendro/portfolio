@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 
 import { Menu, Close } from 'assets';
+import useScroll from 'hooks/useScroll';
 
 const styles = {
-  header: 'font-mono text-sm text-foreground fixed w-full z-20 bg-primary',
+  header: 'font-mono text-sm text-foreground fixed w-full z-10 bg-primary transition-all',
+  nav: 'm-5 mx-14 flex items-center',
   navbar:
-    'flex flex-col w-64 h-screen absolute transition-all duration-500 top-0 bg-secondary top-1/2 right-1 md:w-auto md:h-auto md:static md:flex-row gap-5 items-center justify-center h-20',
-  logo: 'p-2 w-8 h-8 border-green border-2 mr-auto ring-purple ring-2 ring-offset-8 ring-offset-primary rounded-t-2xl rounded-br-2xl font-sans flex items-center font-extrabold hover:ring-green hover:border-purple transition-colors duration-200',
+    'flex flex-col w-64 h-screen absolute transition-transform duration-500 md:duration-50 top-0 bg-secondary  right-0 md:w-auto md:h-auto md:static md:flex-row gap-5 items-center justify-center h-20',
+  logo: 'p-2 w-8 h-8 border-green border-2 mr-auto ring-purple ring-2 ring-offset-8 ring-offset-secondary rounded-t-2xl rounded-br-2xl font-sans flex items-center font-extrabold hover:ring-green hover:border-purple transition-colors duration-200',
   navitem:
     'p-5 hover:underline hover:cursor-pointer decoration-white decoration-2 underline-offset-4 transition-all duration-150 hover:text-green',
   button:
@@ -23,9 +25,13 @@ const links = {
 
 const Navbar = () => {
   const [menu, setMenu] = useState<boolean>(false);
+  const scrollVisible = useScroll();
   const isMenuOpen = menu
     ? `${styles.navbar} translate-x-0`
     : `${styles.navbar} translate-x-72 md:translate-x-0 `;
+  const header = scrollVisible
+    ? `${styles.header} visible bg-secondary`
+    : `${styles.header} invisible`;
 
   const openMenu = () => setMenu(true);
   const closeMenu = () => setMenu(false);
@@ -39,8 +45,8 @@ const Navbar = () => {
   }, [menu]);
 
   return (
-    <header className={styles.header}>
-      <nav className="m-5 mx-14 flex items-center">
+    <header className={header}>
+      <nav className={styles.nav}>
         <div className={styles.logo} />
         <Menu className={`${styles.icon} ${menu ? 'hidden' : 'block'}`} onClick={openMenu} />
         <Close className={`${styles.icon} ${menu ? 'block' : 'hidden'}`} onClick={closeMenu} />
