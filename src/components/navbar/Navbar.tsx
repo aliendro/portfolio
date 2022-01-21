@@ -1,7 +1,8 @@
-import { BaseSyntheticEvent, useEffect, useState } from 'react';
+import { BaseSyntheticEvent } from 'react';
 
 import { Menu, Close, Linkedin, Github, Email } from 'assets';
 import useScroll from 'hooks/useScroll';
+import { useNavbar } from 'context/NavbarContext';
 
 const styles = {
   header:
@@ -24,27 +25,12 @@ const links = {
 };
 
 export default function Navbar() {
-  const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
+  const { state: isOpen, style, open } = useNavbar();
   const headerVisible = useScroll();
-  const navbarClass = navbarOpen
-    ? `${styles.navbar} transform-none`
-    : `${styles.navbar} translate-x-72 md:transform-none `;
   const headerClass = headerVisible ? `${styles.header} top-0` : `${styles.header} -top-40`;
-
-  const open = () => setNavbarOpen(true);
-  const close = () => setNavbarOpen(false);
-
-  useEffect(() => {
-    if (navbarOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [navbarOpen]);
 
   const handleClick = (event: BaseSyntheticEvent, id: string) => {
     event.preventDefault();
-    close();
     document.getElementById(id)!.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -54,9 +40,9 @@ export default function Navbar() {
         <a className={styles.logo} href="/">
           <div />
         </a>
-        <Menu className={`${styles.icon} ${navbarOpen ? 'hidden' : 'block'}`} onClick={open} />
-        <Close className={`${styles.icon} ${navbarOpen ? 'block' : 'hidden'}`} onClick={close} />
-        <ul className={navbarClass}>
+        <Menu className={`${styles.icon} ${isOpen ? 'hidden' : 'block'}`} onClick={open} />
+        <Close className={`${styles.icon} ${isOpen ? 'block' : 'hidden'}`} />
+        <ul className={style}>
           <a href="#stack" onClick={(e) => handleClick(e, 'stack')}>
             <li className={styles.navitem}>Tech stack</li>
           </a>
