@@ -27,7 +27,7 @@ export default function ProjectItem({ title, children, url, img }: ProjectItemPr
       <div className={styles.canvas}>
         <img className={styles.img} src={img} alt="ahub screenshot" loading="lazy" />
       </div>
-      <p className={styles.text}>{children}</p>
+      <div className={styles.text}>{children}</div>
       <div className={styles.buttons}>
         <Button url={url.application} color="bg-green" text="Live demo" />
         <Button url={url.repository} color="bg-purple" text="Code" />
