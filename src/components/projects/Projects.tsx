@@ -1,33 +1,56 @@
+import ProjectItem from './ProjectItem';
+
 const styles = {
   section: 'grid md:grid-cols-[1fr_2fr_1fr] gap-3 text-foreground h-100 cursor-default',
-  heading: 'text-2xl font-bold tracking-wide pl-4 text-cyan md:col-start-2 text-justify',
-  title: 'text-xl font-bold tracking-wide pl-4 md:col-start-2 text-justify',
-  text: 'md:col-start-2 text-justify p-4 text-lg',
+  heading: 'text-3xl md:col-start-2 font-bold tracking-wide pl-4 text-cyan text-center p-10',
 };
 
-const Projects = () => {
-  const meme = 'Projects';
-
+export default function Projects() {
   return (
-    <section className={styles.section}>
-      <h1 className={styles.heading}>{meme}</h1>
-      <h2 className={styles.title}>Project 1</h2>
-      <p className={styles.text}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur animi, exercitationem
-        est facilis, nobis perspiciatis nihil ipsa quos eveniet laboriosam impedit voluptatem
-        sapiente officiis molestiae possimus quae vel rerum aperiam quibusdam, asperiores corporis
-        aut. Incidunt, earum facilis reprehenderit dolor quia officia itaque voluptatem suscipit
-        quibusdam voluptas nesciunt ipsa quasi animi?
-      </p>
-      <h2 className={styles.title}>Project 2</h2>
-      <p className={styles.text}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit hic, dolor itaque voluptas
-        illo saepe quis asperiores sapiente eius similique maiores nisi vitae corrupti et quasi!
-        Exercitationem obcaecati cumque et, quas fuga nisi quod facilis provident modi, est corrupti
-        culpa nostrum optio cum, error ratione ab explicabo? Accusantium, ipsam laborum!
-      </p>
+    <section id="projects" className={styles.section}>
+      <h1 className={styles.heading}>Projects</h1>
+      <ProjectItem
+        title="Animehub"
+        img="/src/assets/screenshots/ahub.webp"
+        url={{
+          application: 'https://ahub.netlify.app',
+          repository: 'https://github.com/aliendro/animehub',
+        }}
+      >
+        <>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero aut eius. Et
+            culpa quaerat numquam, quo corporis expedita. Laborum aliquam nisi voluptatum impedit
+            doloremque rerum iusto possimus eos nostrum. Aperiam animi cum quis nihil earum totam
+            aliquam, porro ad vero numquam, temporibus repellat. Suscipit unde quasi repudiandae qui
+            possimus!
+          </p>
+          <p className="text-[18px] pt-10 tracking-tight">
+            Stack: React, Typescript, Redux (Redux Toolkit), CSS Modules and PostCSS.
+          </p>
+        </>
+      </ProjectItem>
+      <ProjectItem
+        title="Sthethica (ecommerce)"
+        img="/src/assets/screenshots/ahub.webp"
+        url={{
+          application: 'https://sthethica.netlify.app',
+          repository: 'https://github.com/aliendro/sthethica',
+        }}
+      >
+        <>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero aut eius. Et
+            culpa quaerat numquam, quo corporis expedita. Laborum aliquam nisi voluptatum impedit
+            doloremque rerum iusto possimus eos nostrum. Aperiam animi cum quis nihil earum totam
+            aliquam, porro ad vero numquam, temporibus repellat. Suscipit unde quasi repudiandae qui
+            possimus!
+          </p>
+          <p className="text-[18px] pt-10">
+            Stack: React, Typescript, Redux (Redux Toolkit), TailwindCSS, CommerceJS.
+          </p>
+        </>
+      </ProjectItem>
     </section>
   );
-};
-
-export default Projects;
+}
