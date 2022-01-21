@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { BaseSyntheticEvent, useEffect, useState } from 'react';
 
 import { Menu, Close, Linkedin, Github, Email } from 'assets';
 import useScroll from 'hooks/useScroll';
@@ -8,7 +8,7 @@ const styles = {
     'bg-secondary font-mono text-sm text-foreground fixed w-full z-10 bg-primary transition-all duration-500',
   nav: 'm-5 mx-14 flex items-center',
   navbar:
-    'flex flex-col w-64 h-screen absolute transition-transform duration-500 md:duration-50 top-0 bg-secondary right-0 md:w-auto md:h-auto md:static md:flex-row gap-5 items-center justify-center h-20',
+    'flex flex-col w-64 h-screen fixed transition-transform duration-500 md:duration-50 top-0 bg-secondary right-0 md:w-auto md:h-auto md:static md:flex-row gap-5 items-center justify-center h-20',
   logo: 'p-2 w-8 h-8 border-green border-2 mr-auto ring-purple ring-2 ring-offset-8 ring-offset-secondary rounded-t-2xl rounded-br-2xl font-sans flex items-center font-extrabold hover:ring-green hover:border-purple transition-colors duration-200',
   navitem:
     'p-5 hover:underline hover:cursor-pointer decoration-white decoration-2 underline-offset-4  hover:text-green',
@@ -23,7 +23,7 @@ const links = {
   email: 'mailto:contato@aliendro.com',
 };
 
-const Navbar = () => {
+export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
   const headerVisible = useScroll();
   const navbarClass = navbarOpen
@@ -42,6 +42,12 @@ const Navbar = () => {
     }
   }, [navbarOpen]);
 
+  const handleClick = (event: BaseSyntheticEvent, id: string) => {
+    event.preventDefault();
+    close();
+    document.getElementById(id)!.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <header className={headerClass}>
       <nav className={styles.nav}>
@@ -51,12 +57,12 @@ const Navbar = () => {
         <Menu className={`${styles.icon} ${navbarOpen ? 'hidden' : 'block'}`} onClick={open} />
         <Close className={`${styles.icon} ${navbarOpen ? 'block' : 'hidden'}`} onClick={close} />
         <ul className={navbarClass}>
-          <li className={styles.navitem}>
-            <a href="#about">About</a>
-          </li>
-          <li className={styles.navitem}>
-            <a href="#projects">Projects</a>
-          </li>
+          <a href="#stack" onClick={(e) => handleClick(e, 'stack')}>
+            <li className={styles.navitem}>Tech stack</li>
+          </a>
+          <a href="#projects" onClick={(e) => handleClick(e, 'projects')}>
+            <li className={styles.navitem}>Projects</li>
+          </a>
           <li className={styles.navitem}>
             <a href="#resume">Resume</a>
           </li>
@@ -81,6 +87,4 @@ const Navbar = () => {
       </nav>
     </header>
   );
-};
-
-export default Navbar;
+}
