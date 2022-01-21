@@ -1,3 +1,4 @@
+import { animehub } from 'assets';
 import ProjectItem from './ProjectItem';
 
 const styles = {
@@ -11,7 +12,7 @@ export default function Projects() {
       <h1 className={styles.heading}>Projects</h1>
       <ProjectItem
         title="Animehub"
-        img="/src/assets/screenshots/ahub.webp"
+        img={animehub}
         url={{
           application: 'https://ahub.netlify.app',
           repository: 'https://github.com/aliendro/animehub',
@@ -32,7 +33,7 @@ export default function Projects() {
       </ProjectItem>
       <ProjectItem
         title="Sthethica (ecommerce)"
-        img="/src/assets/screenshots/ahub.webp"
+        img={animehub}
         url={{
           application: 'https://sthethica.netlify.app',
           repository: 'https://github.com/aliendro/sthethica',

@@ -22,6 +22,9 @@ import { ReactComponent as TestingLibrary } from 'assets/stack/testing.svg';
 import { ReactComponent as Git } from 'assets/stack/git.svg';
 import { ReactComponent as Router } from 'assets/stack/router.svg';
 
+// Screenshots
+import animehub from 'assets/screenshots/ahub.webp';
+
 export {
   Menu,
   Close,
@@ -41,4 +44,5 @@ export {
   TestingLibrary,
   Git,
   Router,
+  animehub,
 };
