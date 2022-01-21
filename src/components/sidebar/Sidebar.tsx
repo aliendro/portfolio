@@ -13,7 +13,7 @@ const links = {
   email: 'mailto:contato@aliendro.com',
 };
 
-const Sidebar = () => {
+export default function Sidebar() {
   const [sidebarClass, setSidebarClass] = useState<string>(`${styles.sidebar} -bottom-80`);
 
   useEffect(() => {
@@ -40,6 +40,4 @@ const Sidebar = () => {
       </li>
     </ul>
   );
-};
-
-export default Sidebar;
+}

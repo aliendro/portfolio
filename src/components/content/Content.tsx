@@ -7,13 +7,13 @@ const styles = {
   section: 'flex flex-col gap-40 mt-32 md:mt-40 justify-center w-full',
 };
 
-const Content = () => (
-  <section className={styles.section}>
-    <Hero />
-    <About />
-    <Projects />
-    <GoTop />
-  </section>
-);
-
-export default Content;
+export default function Content() {
+  return (
+    <section className={styles.section}>
+      <Hero />
+      <About />
+      <Projects />
+      <GoTop />
+    </section>
+  );
+}
