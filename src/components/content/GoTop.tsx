@@ -7,7 +7,7 @@ const styles = {
   icon: 'w-6 h-6',
 };
 
-const GoTop = () => {
+export default function GoTop() {
   const [goTopVisible, setGoTopVisible] = useState<boolean>(false);
 
   const goTop = goTopVisible ? `${styles.button} bottom-10` : `${styles.button} -bottom-40`;
@@ -25,15 +25,14 @@ const GoTop = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.history.pushState({}, '', '/');
+  };
+
   return (
-    <button
-      type="button"
-      className={goTop}
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-    >
+    <button type="button" className={goTop} onClick={handleClick}>
       <Top className={styles.icon} />
     </button>
   );
-};
-
-export default GoTop;
+}
