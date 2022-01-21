@@ -1,3 +1,5 @@
+import Button from 'components/Button';
+
 const styles = {
   section: 'grid md:grid-cols-[1fr_2fr_1fr] gap-3 text-foreground h-100 cursor-default',
   heading: 'pl-4 font-mono text-green md:col-start-2',
@@ -21,9 +23,7 @@ export default function Hero() {
         products.
       </h4>
       <div className="pl-4 md:col-start-2 text-center">
-        <button type="button" className={styles.button}>
-          Check out my resume
-        </button>
+        <Button color="bg-green" large text="Check out my resume" url="#" />
       </div>
     </section>
   );
