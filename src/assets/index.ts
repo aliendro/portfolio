@@ -18,6 +18,9 @@ import { ReactComponent as Tailwind } from 'assets/stack/tailwind.svg';
 import { ReactComponent as Typescript } from 'assets/stack/typescript.svg';
 import { ReactComponent as Jest } from 'assets/stack/jest.svg';
 import { ReactComponent as Nextjs } from 'assets/stack/nextjs.svg';
+import { ReactComponent as TestingLibrary } from 'assets/stack/testing.svg';
+import { ReactComponent as Git } from 'assets/stack/git.svg';
+import { ReactComponent as Router } from 'assets/stack/router.svg';
 
 export {
   Menu,
@@ -35,4 +38,7 @@ export {
   Typescript,
   Jest,
   Nextjs,
+  TestingLibrary,
+  Git,
+  Router,
 };
