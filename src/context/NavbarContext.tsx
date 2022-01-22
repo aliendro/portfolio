@@ -15,7 +15,7 @@ const NavbarContext = createContext({} as ContextState);
 
 export default function NavbarProvider({ children }: NavbarProviderProps) {
   const navbar =
-    'flex flex-col w-64 h-screen fixed transition-transform duration-500 md:duration-50 top-0 bg-secondary right-0 md:w-auto md:h-auto md:static md:flex-row gap-5 items-center justify-center h-20';
+    'flex flex-col w-64 h-full min-h-screen md:min-h-0 fixed transition-transform duration-500 md:duration-50 top-0 bg-secondary right-0 md:w-auto md:h-auto md:static md:flex-row gap-5 items-center justify-center h-20';
 
   const [state, setState] = useState<boolean>(false);
   const style = state ? `${navbar} transform-none` : `${navbar} translate-x-72 md:transform-none `;
