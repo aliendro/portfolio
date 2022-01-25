@@ -3,13 +3,9 @@ import Hero from 'components/hero/Hero';
 import Projects from 'components/projects/Projects';
 import GoTop from './GoTop';
 
-const styles = {
-  section: 'flex flex-col gap-12 md:gap-40 mt-32 md:mt-80 justify-center w-full',
-};
-
 export default function Content() {
   return (
-    <section className={styles.section}>
+    <section className="mt-32 flex w-full flex-col justify-center gap-12 md:mt-80 md:gap-40">
       <Hero />
       <About />
       <Projects />
