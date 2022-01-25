@@ -31,7 +31,7 @@ export default function GoTop() {
   };
 
   return (
-    <button type="button" className={goTop} onClick={handleClick}>
+    <button type="button" aria-label="scroll to top" className={goTop} onClick={handleClick}>
       <Top className={styles.icon} />
     </button>
   );

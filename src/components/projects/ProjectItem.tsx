@@ -26,17 +26,24 @@ export default function ProjectItem({ project, children }: ProjectItemProps) {
     <div className={styles.container}>
       <h2 className={styles.title}>{project.title}</h2>
       <div className={styles.canvas}>
-        <img className={styles.img} src={project.img} alt="ahub screenshot" loading="lazy" />
+        <img
+          width="600px"
+          height="480px"
+          className={styles.img}
+          src={project.img}
+          alt="ahub screenshot"
+          loading="lazy"
+        />
       </div>
       <div className={styles.text}>{children}</div>
       <div className={styles.buttons}>
         <a href={project.url.application} target="_blank" rel="noreferrer">
-          <button type="button" className="button bg-green">
+          <button type="button" aria-label="demo" className="button bg-green">
             Live demo
           </button>
         </a>
         <a href={project.url.repository} target="_blank" rel="noreferrer">
-          <button type="button" className="button bg-purple">
+          <button type="button" aria-label="code" className="button bg-purple">
             Code
           </button>
         </a>

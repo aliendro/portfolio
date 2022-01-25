@@ -24,17 +24,17 @@ export default function Sidebar() {
   return (
     <ul className={sidebarClass}>
       <li>
-        <a href={links.linkedin} target="_blank" rel="noreferrer">
+        <a href={links.linkedin} target="_blank" rel="noreferrer" aria-label="linkedin">
           <Linkedin className={styles.icon} />
         </a>
       </li>
       <li>
-        <a href={links.github} target="_blank" rel="noreferrer">
+        <a href={links.github} target="_blank" rel="noreferrer" aria-label="github">
           <Github className={styles.icon} />
         </a>
       </li>
       <li>
-        <a href={links.email} target="_blank" rel="noreferrer">
+        <a href={links.email} target="_blank" rel="noreferrer" aria-label="email">
           <Email className={styles.icon} />
         </a>
       </li>

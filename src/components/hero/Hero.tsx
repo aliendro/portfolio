@@ -16,7 +16,7 @@ export default function Hero() {
         always having accessibility in mind.
       </h4>
       <div className="p-10 text-center md:col-start-2">
-        <button type="button" className="button w-48 bg-green">
+        <button type="button" aria-label="resume" className="button w-48 bg-green">
           Check out my resume
         </button>
       </div>

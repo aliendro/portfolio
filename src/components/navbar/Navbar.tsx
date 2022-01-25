@@ -37,22 +37,24 @@ export default function Navbar() {
   return (
     <header className={headerClass}>
       <nav className={styles.nav}>
-        <a className={styles.logo} href="/">
-          <div />
-        </a>
+        <div className={styles.logo} />
         <Menu className={`${styles.icon} ${isOpen ? 'hidden' : 'block'}`} onClick={open} />
         <Close className={`${styles.icon} ${isOpen ? 'block' : 'hidden'}`} />
         <ul className={style}>
-          <a href="#stack" onClick={(e) => handleClick(e, 'stack')}>
-            <li className={styles.navitem}>Tech stack</li>
-          </a>
-          <a href="#projects" onClick={(e) => handleClick(e, 'projects')}>
-            <li className={styles.navitem}>Projects</li>
-          </a>
+          <li className={styles.navitem}>
+            <a href="#stack" onClick={(e) => handleClick(e, 'stack')}>
+              Tech stack
+            </a>
+          </li>
+          <li className={styles.navitem}>
+            <a href="#projects" onClick={(e) => handleClick(e, 'projects')}>
+              Projects
+            </a>
+          </li>
           <li className={styles.navitem}>
             <a href="#resume">Resume</a>
           </li>
-          <ul className="flex fixed bottom-0 md:hidden">
+          <ul className="fixed bottom-0 flex md:hidden">
             <li className={styles.navitem}>
               <a href={links.linkedin} target="_blank" rel="noreferrer">
                 <Linkedin />
