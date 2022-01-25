@@ -5,6 +5,9 @@ export default function useScroll() {
   const [current, setCurrent] = useState<Number>(0);
 
   const handleScroll = () => {
+    if (window.scrollY === 0) {
+      setVisible(true);
+    }
     if (window.scrollY > current) {
       setVisible(false);
     } else {
