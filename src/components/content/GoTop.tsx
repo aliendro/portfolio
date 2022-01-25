@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 const styles = {
   button:
-    'bg-secondary w-10 h-10 rounded-full grid place-items-center fixed bottom-10 right-10 text-green transition-all duration-300',
-  icon: 'w-6 h-6',
+    'bg-green w-12 h-12 rounded-full grid place-items-center fixed bottom-10 right-10 text-secondary transition-all duration-300',
+  icon: 'w-7 h-7',
 };
 
 export default function GoTop() {
