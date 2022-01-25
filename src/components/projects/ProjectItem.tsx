@@ -1,14 +1,15 @@
-import Button from 'components/Button';
 import { ReactNode } from 'react';
 
 type ProjectItemProps = {
-  title: string;
-  children: ReactNode;
-  img: string;
-  url: {
-    application: string;
-    repository: string;
+  project: {
+    title: string;
+    img: string;
+    url: {
+      application: string;
+      repository: string;
+    };
   };
+  children: ReactNode;
 };
 
 const styles = {
@@ -20,17 +21,25 @@ const styles = {
   text: 'md:col-start-2 text-justify p-4 text-lg',
 };
 
-export default function ProjectItem({ title, children, url, img }: ProjectItemProps) {
+export default function ProjectItem({ project, children }: ProjectItemProps) {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title}>{project.title}</h2>
       <div className={styles.canvas}>
-        <img className={styles.img} src={img} alt="ahub screenshot" loading="lazy" />
+        <img className={styles.img} src={project.img} alt="ahub screenshot" loading="lazy" />
       </div>
       <div className={styles.text}>{children}</div>
       <div className={styles.buttons}>
-        <Button url={url.application} color="bg-green" text="Live demo" />
-        <Button url={url.repository} color="bg-purple" text="Code" />
+        <a href={project.url.application} target="_blank" rel="noreferrer">
+          <button type="button" className="button bg-green">
+            Live demo
+          </button>
+        </a>
+        <a href={project.url.repository} target="_blank" rel="noreferrer">
+          <button type="button" className="button bg-purple">
+            Code
+          </button>
+        </a>
       </div>
     </div>
   );
