@@ -5,10 +5,12 @@ import NavbarProvider from 'context/NavbarContext';
 import App from './App';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <NavbarProvider>
-      <App />
-    </NavbarProvider>
-  </React.StrictMode>,
+  <React.Suspense fallback={<div />}>
+    <React.StrictMode>
+      <NavbarProvider>
+        <App />
+      </NavbarProvider>
+    </React.StrictMode>
+  </React.Suspense>,
   document.getElementById('root'),
 );

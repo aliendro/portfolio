@@ -1,7 +1,9 @@
-import About from 'components/about/About';
-import Hero from 'components/hero/Hero';
-import Projects from 'components/projects/Projects';
-import GoTop from './GoTop';
+import { lazy } from 'react';
+
+const About = lazy(() => import('components/about/About'));
+const Hero = lazy(() => import('components/hero/Hero'));
+const Projects = lazy(() => import('components/projects/Projects'));
+const GoTop = lazy(() => import('./GoTop'));
 
 export default function Content() {
   return (
