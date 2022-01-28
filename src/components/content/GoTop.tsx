@@ -1,22 +1,14 @@
 import { Top } from 'assets';
 import { useEffect, useState } from 'react';
 
-const styles = {
-  button:
-    'bg-green w-12 h-12 rounded-full grid place-items-center fixed bottom-10 right-10 text-secondary transition-all duration-300',
-  icon: 'w-7 h-7',
-};
-
 export default function GoTop() {
-  const [goTopVisible, setGoTopVisible] = useState<boolean>(false);
-
-  const goTop = goTopVisible ? `${styles.button} bottom-10` : `${styles.button} -bottom-40`;
+  const [visible, setVisible] = useState<boolean>(false);
 
   const handleScroll = () => {
     if (window.scrollY > 100) {
-      setGoTopVisible(true);
+      setVisible(true);
     } else {
-      setGoTopVisible(false);
+      setVisible(false);
     }
   };
 
@@ -31,8 +23,15 @@ export default function GoTop() {
   };
 
   return (
-    <button type="button" aria-label="scroll to top" className={goTop} onClick={handleClick}>
-      <Top className={styles.icon} />
+    <button
+      type="button"
+      aria-label="scroll to top"
+      className={`fixed bottom-0 right-10 grid h-12 w-12 place-items-center rounded-full bg-green text-secondary transition-all duration-300 ${
+        visible ? '-translate-y-10' : 'translate-y-full'
+      }`}
+      onClick={handleClick}
+    >
+      <Top className="h-7 w-7" />
     </button>
   );
 }
