@@ -1,20 +1,27 @@
-import { animehub } from 'assets';
+import { animehub, sthethica } from 'assets';
 import ProjectItem from './ProjectItem';
 
 export default function Projects() {
+  const animeHub = {
+    title: 'Animehub',
+    img: animehub,
+    url: {
+      application: 'https://ahub.netlify.app',
+      repository: 'https://github.com/aliendro/animehub',
+    },
+  };
+  const ecommerce = {
+    title: 'Sthethica',
+    img: sthethica,
+    url: {
+      application: 'https://sthethica.netlify.app',
+      repository: 'https://github.com/aliendro/sthethica',
+    },
+  };
   return (
     <section id="projects" className="section">
       <h1 className="heading text-cyan">Projects</h1>
-      <ProjectItem
-        project={{
-          title: 'Animehub',
-          img: animehub,
-          url: {
-            application: 'https://ahub.netlify.app',
-            repository: 'https://github.com/aliendro/animehub',
-          },
-        }}
-      >
+      <ProjectItem project={animeHub}>
         <>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero aut eius. Et
@@ -28,16 +35,7 @@ export default function Projects() {
           </p>
         </>
       </ProjectItem>
-      <ProjectItem
-        project={{
-          title: 'Sthethica',
-          img: animehub,
-          url: {
-            application: 'https://sthethica.netlify.app',
-            repository: 'https://github.com/aliendro/sthethica',
-          },
-        }}
-      >
+      <ProjectItem project={ecommerce}>
         <>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero aut eius. Et

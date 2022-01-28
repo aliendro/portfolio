@@ -24,6 +24,7 @@ import { ReactComponent as Router } from 'assets/stack/router.svg';
 
 // Screenshots
 import animehub from 'assets/screenshots/ahub.webp';
+import sthethica from 'assets/screenshots/sthethica.webp';
 
 export {
   Menu,
@@ -45,4 +46,5 @@ export {
   Git,
   Router,
   animehub,
+  sthethica,
 };
