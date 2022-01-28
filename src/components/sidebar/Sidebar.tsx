@@ -1,11 +1,4 @@
 import { Linkedin, Github, Email } from 'assets';
-import { useEffect, useState } from 'react';
-
-const styles = {
-  sidebar:
-    'hidden md:flex flex-col gap-10 fixed bg-secondary p-2 pt-8 pb-8 rounded shadow-sm shadow-secondary text-foreground ml-5 transition-all duration-500',
-  icon: 'h-7 w-7 hover:text-purple transition-colors duration-200 hover:cursor-pointer',
-};
 
 const links = {
   linkedin: 'https://www.linkedin.com/in/michael-aliendro-484578216/',
@@ -14,28 +7,21 @@ const links = {
 };
 
 export default function Sidebar() {
-  const [sidebarClass, setSidebarClass] = useState<string>(`${styles.sidebar} -bottom-80`);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setSidebarClass(`${styles.sidebar} bottom-1/2`);
-    }, 200);
-  }, []);
   return (
-    <ul className={sidebarClass}>
+    <ul className="fixed top-1/3 ml-5 hidden flex-col gap-10 rounded bg-secondary p-2 pt-8 pb-8 text-foreground shadow-sm shadow-secondary transition-all duration-500 md:flex">
       <li>
         <a href={links.linkedin} target="_blank" rel="noreferrer" aria-label="linkedin">
-          <Linkedin className={styles.icon} />
+          <Linkedin className="h-7 w-7 transition-colors duration-200 hover:cursor-pointer hover:text-purple" />
         </a>
       </li>
       <li>
         <a href={links.github} target="_blank" rel="noreferrer" aria-label="github">
-          <Github className={styles.icon} />
+          <Github className="h-7 w-7 transition-colors duration-200 hover:cursor-pointer hover:text-purple" />
         </a>
       </li>
       <li>
         <a href={links.email} target="_blank" rel="noreferrer" aria-label="email">
-          <Email className={styles.icon} />
+          <Email className="h-7 w-7 transition-colors duration-200 hover:cursor-pointer hover:text-purple" />
         </a>
       </li>
     </ul>
