@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-type ProjectItemProps = {
+interface ProjectItemProps {
   project: {
     title: string;
     img: string;
@@ -10,33 +10,26 @@ type ProjectItemProps = {
     };
   };
   children: ReactNode;
-};
-
-const styles = {
-  container: 'md:col-start-2 mb-10 flex flex-col gap-5',
-  canvas: 'p-4 md:col-start-2',
-  img: 'ring-2 ring-secondary rounded-lg',
-  buttons: 'md:col-start-2 flex md:gap-10 items-center justify-around',
-  title: 'text-xl font-bold tracking-wide pl-4 md:col-start-2 text-justify',
-  text: 'md:col-start-2 text-justify p-4 text-lg',
-};
+}
 
 export default function ProjectItem({ project, children }: ProjectItemProps) {
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>{project.title}</h2>
-      <div className={styles.canvas}>
+    <div className="mb-10 flex flex-col gap-5 md:col-start-2">
+      <h2 className="pl-4 text-justify text-xl font-bold tracking-wide md:col-start-2">
+        {project.title}
+      </h2>
+      <div className="flex justify-center p-4 md:col-start-2">
         <img
+          className=" rounded-lg ring-2 ring-secondary"
           width="600px"
           height="480px"
-          className={styles.img}
           src={project.img}
           alt="ahub screenshot"
           loading="lazy"
         />
       </div>
-      <div className={styles.text}>{children}</div>
-      <div className={styles.buttons}>
+      <div className="p-4 text-justify text-lg md:col-start-2">{children}</div>
+      <div className="flex items-center justify-around md:col-start-2 md:gap-10">
         <a href={project.url.application} target="_blank" rel="noreferrer">
           <button type="button" aria-label="demo" className="button bg-green">
             Live demo
