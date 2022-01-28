@@ -12,8 +12,8 @@ export default function Hero() {
       </h3>
       <h4 className="p-4 text-justify text-lg md:col-start-2">
         I&apos;m a software engineer with more than 3 years of experience in building and
-        implementing web applications. I am focused to deliver great user experience products,
-        always having accessibility in mind.
+        implementing web applications. I am focused to deliver great user experience, responsive and
+        accessible products.
       </h4>
       <div className="p-10 text-center md:col-start-2">
         <button type="button" aria-label="resume" className="button w-48 bg-green">
