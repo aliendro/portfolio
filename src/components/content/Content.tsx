@@ -7,11 +7,11 @@ const GoTop = lazy(() => import('./GoTop'));
 
 export default function Content() {
   return (
-    <section className="mt-32 flex w-full flex-col justify-center gap-12 md:mt-80 md:gap-40">
+    <div className="mt-32 flex w-full flex-col justify-center gap-12 md:mt-80 md:gap-40">
       <Hero />
       <About />
       <Projects />
       <GoTop />
-    </section>
+    </div>
   );
 }
