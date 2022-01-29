@@ -22,52 +22,52 @@ export default function About() {
       </h1>
       <div className="grid grid-cols-2 place-items-center gap-5 text-center md:col-start-2 md:grid-cols-3 md:gap-10">
         <div>
-          <Javascript className="icon text-yellow" />
+          <Javascript aria-label="javascript icon" className="icon text-yellow" />
           <span className={text}>Javascript</span>
         </div>
         <div>
-          <Html className="icon text-red" />
+          <Html aria-label="html icon" className="icon text-red" />
           <span className={text}>HTML</span>
         </div>
         <div>
-          <Css className="icon text-orange" />
+          <Css aria-label="css icon" className="icon text-orange" />
           <span className={text}>CSS</span>
         </div>
         <div>
-          <React className="icon text-cyan" />
+          <React aria-label="react icon" className="icon text-cyan" />
           <span className={text}>React</span>
         </div>
         <div>
-          <Redux className="icon text-purple" />
+          <Redux aria-label="redux icon" className="icon text-purple" />
           <span className={text}>Redux</span>
         </div>
         <div>
-          <Tailwind className="icon text-cyan" />
+          <Tailwind aria-label="tailwind icon" className="icon text-cyan" />
           <span className={text}>TailwindCSS</span>
         </div>
 
         <div>
-          <TestingLibrary className="icon text-red" />
+          <TestingLibrary aria-label="testing library icon" className="icon text-red" />
           <span className={text}>Testing Library</span>
         </div>
         <div>
-          <Jest className="icon text-[#9A405B] " />
+          <Jest aria-label="jest icon" className="icon text-[#9A405B] " />
           <span className={text}>Jest</span>
         </div>
         <div>
-          <Git className="icon text-[#E94E31]" />
+          <Git aria-label="git icon" className="icon text-[#E94E31]" />
           <span className={text}>Git</span>
         </div>
         <div>
-          <Typescript className="icon text-cyan" />
+          <Typescript aria-label="typescript icon" className="icon text-cyan" />
           <span className={text}>Typescript</span>
         </div>
         <div>
-          <Nextjs className="icon text-foreground" />
+          <Nextjs aria-label="nextjs icon" className="icon text-foreground" />
           <span className={text}>NextJS</span>
         </div>
         <div>
-          <Router className="icon text-red" />
+          <Router aria-label="react-router icon" className="icon text-red" />
           <span className={text}>React Router</span>
         </div>
       </div>
