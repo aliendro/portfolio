@@ -1,22 +1,7 @@
-import { BaseSyntheticEvent } from 'react';
+import { BaseSyntheticEvent, useEffect, useState } from 'react';
 
 import { Menu, Close, Linkedin, Github, Email } from 'assets';
 import useScroll from 'hooks/useScroll';
-import { useNavbar } from 'context/NavbarContext';
-
-const styles = {
-  header:
-    'bg-secondary font-mono text-sm text-foreground fixed w-full z-10 bg-primary transition-all duration-500',
-  nav: 'm-5 mx-14 flex items-center',
-  navbar:
-    'flex flex-col w-64 h-screen fixed transition-transform duration-500 md:duration-50 top-0 bg-secondary right-0 md:w-auto md:h-auto md:static md:flex-row gap-5 items-center justify-center h-20',
-  logo: 'p-2 w-8 h-8 border-green border-2 mr-auto ring-purple ring-2 ring-offset-8 ring-offset-secondary rounded-t-2xl rounded-br-2xl font-sans flex items-center font-extrabold hover:ring-green hover:border-purple transition-colors duration-200',
-  navitem:
-    'p-5 hover:underline hover:cursor-pointer decoration-white decoration-2 underline-offset-4  hover:text-green',
-  button:
-    'p-3 border-white border-[1.5px] rounded hover:bg-white transition-colors duration-200 hover:text-white',
-  icon: 'text-green h-10 w-10 z-10 md:hidden',
-};
 
 const links = {
   linkedin: 'https://www.linkedin.com/in/michael-aliendro-484578216/',
@@ -25,47 +10,89 @@ const links = {
 };
 
 export default function Navbar() {
-  const { state: isOpen, style, open } = useNavbar();
+  const navItem =
+    'p-5 hover:underline hover:cursor-pointer decoration-white decoration-2 underline-offset-4 hover:text-green';
+  const [isOpen, setOpen] = useState<boolean>(false);
   const headerVisible = useScroll();
-  const headerClass = headerVisible ? `${styles.header} top-0` : `${styles.header} -top-40`;
 
-  const handleClick = (event: BaseSyntheticEvent, id: string) => {
+  const openMenu = () => {
+    setTimeout(() => {
+      setOpen(true);
+    }, 75);
+  };
+
+  const closeMenu = () => {
+    setTimeout(() => {
+      setOpen(false);
+    }, 75);
+  };
+
+  const handleClick = (event: BaseSyntheticEvent) => {
     event.preventDefault();
+    const id = (event.target.hash as string).slice(1);
     document.getElementById(id)!.scrollIntoView({ behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
   return (
-    <header className={headerClass}>
-      <nav className={styles.nav}>
-        <div className={styles.logo} />
-        <Menu className={`${styles.icon} ${isOpen ? 'hidden' : 'block'}`} onClick={open} />
-        <Close className={`${styles.icon} ${isOpen ? 'block' : 'hidden'}`} />
-        <ul className={style}>
-          <li className={styles.navitem}>
-            <a href="#stack" onClick={(e) => handleClick(e, 'stack')}>
+    <header
+      className={`fixed top-0 z-10 w-full bg-secondary font-mono text-sm text-foreground transition-all duration-500 ${
+        headerVisible ? 'transform-none ' : '-translate-y-full'
+      }`}
+    >
+      <nav className="m-5 mx-14 flex items-center">
+        <div className="mr-auto flex h-8 w-8 items-center rounded-t-2xl rounded-br-2xl border-2 border-green p-2 font-sans font-extrabold ring-2 ring-purple ring-offset-8 ring-offset-secondary transition-colors duration-200 hover:border-purple hover:ring-green" />
+
+        <Menu
+          className={`z-10 h-10 w-10 text-green md:hidden ${isOpen ? 'hidden' : 'block'}`}
+          onClick={openMenu}
+        />
+        <Close
+          onClick={closeMenu}
+          className={`z-10 h-10 w-10 text-green md:hidden ${isOpen ? 'block' : 'hidden'}`}
+        />
+
+        <ul
+          aria-label="mobile menu"
+          onTouchStart={closeMenu}
+          className={`fixed top-0 right-0 flex h-screen w-64 flex-col items-center justify-center gap-5 bg-secondary transition-all duration-300 md:static md:h-auto md:w-auto md:flex-row ${
+            isOpen ? 'transform-none' : 'translate-x-72 md:transform-none'
+          }`}
+        >
+          <li className={navItem}>
+            <a href="#stack" onClick={handleClick}>
               Tech stack
             </a>
           </li>
-          <li className={styles.navitem}>
-            <a href="#projects" onClick={(e) => handleClick(e, 'projects')}>
+          <li className={navItem}>
+            <a href="#projects" onClick={handleClick}>
               Projects
             </a>
           </li>
-          <li className={styles.navitem}>
-            <a href="#resume">Resume</a>
+          <li className={navItem}>
+            <a href="#resume" onClick={handleClick}>
+              Resume
+            </a>
           </li>
           <ul className="fixed bottom-0 flex md:hidden">
-            <li className={styles.navitem}>
+            <li className={navItem}>
               <a href={links.linkedin} target="_blank" rel="noreferrer">
                 <Linkedin />
               </a>
             </li>
-            <li className={styles.navitem}>
+            <li className={navItem}>
               <a href={links.github} target="_blank" rel="noreferrer">
                 <Github />
               </a>
             </li>
-            <li className={styles.navitem}>
+            <li className={navItem}>
               <a href={links.email} target="_blank" rel="noreferrer">
                 <Email />
               </a>
