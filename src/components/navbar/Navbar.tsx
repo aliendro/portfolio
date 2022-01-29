@@ -60,7 +60,7 @@ export default function Navbar() {
         />
 
         <ul
-          aria-label="mobile menu"
+          aria-label="primary navigation"
           onTouchStart={closeMenu}
           className={`fixed top-0 right-0 flex h-screen w-64 flex-col items-center justify-center gap-5 bg-secondary transition-all duration-300 md:static md:h-auto md:w-auto md:flex-row ${
             isOpen ? 'transform-none' : 'translate-x-72 md:transform-none'
