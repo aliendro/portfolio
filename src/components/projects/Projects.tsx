@@ -1,4 +1,4 @@
-import { animehub, sthethica } from 'assets';
+import { animehub, sthetica } from 'assets';
 import ProjectItem from './ProjectItem';
 
 export default function Projects() {
@@ -11,11 +11,11 @@ export default function Projects() {
     },
   };
   const ecommerce = {
-    title: 'Sthethica',
-    img: sthethica,
+    title: 'Sthetica',
+    img: sthetica,
     url: {
       application: 'https://sthethica.netlify.app',
-      repository: 'https://github.com/aliendro/sthethica',
+      repository: 'https://github.com/aliendro/sthetica',
     },
   };
   return (
