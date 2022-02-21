@@ -5,6 +5,9 @@ export default function Projects() {
   const animeHub = {
     title: 'Animehub',
     img: animehub,
+    description:
+      'This is a simple side project using Kitsu API to explore anime titles. It was created using Vite, React and Redux Toolkit.',
+    stack: 'React, Typescript, Redux (Redux Toolkit), React Router, CSS Modules and PostCSS.',
     url: {
       application: 'https://ahub.netlify.app',
       repository: 'https://github.com/aliendro/animehub',
@@ -13,6 +16,9 @@ export default function Projects() {
   const ecommerce = {
     title: 'Sthetica',
     img: sthetica,
+    description:
+      'This is a simple artwork ecommerce. It was created using Vite, React, Typescript, CommerceJS, Redux Toolkit and TailwindCSS. Artwork provided by sthethica',
+    stack: 'React, Typescript, Redux (Redux Toolkit), React Router, TailwindCSS, CommerceJS.',
     url: {
       application: 'https://sthethica.netlify.app',
       repository: 'https://github.com/aliendro/sthetica',
@@ -21,34 +27,8 @@ export default function Projects() {
   return (
     <section id="projects" className="section">
       <h1 className="heading text-cyan">Projects</h1>
-      <ProjectItem project={animeHub}>
-        <>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero aut eius. Et
-            culpa quaerat numquam, quo corporis expedita. Laborum aliquam nisi voluptatum impedit
-            doloremque rerum iusto possimus eos nostrum. Aperiam animi cum quis nihil earum totam
-            aliquam, porro ad vero numquam, temporibus repellat. Suscipit unde quasi repudiandae qui
-            possimus!
-          </p>
-          <p className="pt-10 text-[18px] tracking-tight">
-            Stack: React, Typescript, Redux (Redux Toolkit), React Router, CSS Modules and PostCSS.
-          </p>
-        </>
-      </ProjectItem>
-      <ProjectItem project={ecommerce}>
-        <>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat libero aut eius. Et
-            culpa quaerat numquam, quo corporis expedita. Laborum aliquam nisi voluptatum impedit
-            doloremque rerum iusto possimus eos nostrum. Aperiam animi cum quis nihil earum totam
-            aliquam, porro ad vero numquam, temporibus repellat. Suscipit unde quasi repudiandae qui
-            possimus!
-          </p>
-          <p className="pt-10 text-[18px]">
-            Stack: React, Typescript, Redux (Redux Toolkit), React Router, TailwindCSS, CommerceJS.
-          </p>
-        </>
-      </ProjectItem>
+      <ProjectItem project={animeHub} />
+      <ProjectItem project={ecommerce} />
     </section>
   );
 }

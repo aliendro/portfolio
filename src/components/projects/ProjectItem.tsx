@@ -1,18 +1,17 @@
-import { ReactNode } from 'react';
-
-interface ProjectItemProps {
+type ProjectItemProps = {
   project: {
     title: string;
     img: string;
+    description: string;
+    stack: string;
     url: {
       application: string;
       repository: string;
     };
   };
-  children: ReactNode;
-}
+};
 
-export default function ProjectItem({ project, children }: ProjectItemProps) {
+export default function ProjectItem({ project }: ProjectItemProps) {
   return (
     <div className="mb-10 flex flex-col gap-5 md:col-start-2">
       <h2 className="pl-4 text-justify text-xl font-bold tracking-wide md:col-start-2">
@@ -28,7 +27,8 @@ export default function ProjectItem({ project, children }: ProjectItemProps) {
           loading="lazy"
         />
       </div>
-      <div className="p-4 text-justify text-lg md:col-start-2">{children}</div>
+      <div className="p-4 text-justify text-lg md:col-start-2">{project.description}</div>
+      <div className="p-4 text-justify text-lg md:col-start-2">Stack: {project.stack}</div>
       <div className="flex items-center justify-around md:col-start-2 md:gap-10">
         <a href={project.url.application} target="_blank" rel="noreferrer">
           <button type="button" aria-label="demo" className="button bg-green">
