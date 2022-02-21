@@ -15,18 +15,6 @@ export default function Navbar() {
   const [isOpen, setOpen] = useState<boolean>(false);
   const headerVisible = useScroll();
 
-  const openMenu = () => {
-    setTimeout(() => {
-      setOpen(true);
-    }, 75);
-  };
-
-  const closeMenu = () => {
-    setTimeout(() => {
-      setOpen(false);
-    }, 75);
-  };
-
   const handleClick = (event: BaseSyntheticEvent) => {
     event.preventDefault();
     const id = (event.target.hash as string).slice(1);
@@ -52,16 +40,16 @@ export default function Navbar() {
 
         <Menu
           className={`z-10 h-10 w-10 text-green md:hidden ${isOpen ? 'hidden' : 'block'}`}
-          onClick={openMenu}
+          onClick={() => setOpen(true)}
         />
         <Close
-          onClick={closeMenu}
+          onClick={() => setOpen(false)}
           className={`z-10 h-10 w-10 text-green md:hidden ${isOpen ? 'block' : 'hidden'}`}
         />
 
         <ul
           aria-label="primary navigation"
-          onTouchStart={closeMenu}
+          onTouchStart={() => setOpen(false)}
           className={`fixed top-0 right-0 flex h-screen w-64 flex-col items-center justify-center gap-5 bg-secondary transition-all duration-300 md:static md:h-auto md:w-auto md:flex-row ${
             isOpen ? 'transform-none' : 'translate-x-72 md:transform-none'
           }`}
