@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "license": "GPL",
+  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
