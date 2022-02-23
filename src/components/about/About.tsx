@@ -7,7 +7,7 @@ import {
   Nextjs,
   React,
   Redux,
-  Router,
+  Node,
   Tailwind,
   TestingLibrary,
   Typescript,
@@ -75,8 +75,8 @@ export default function About() {
           <span className={text}>NextJS</span>
         </div>
         <div>
-          <Router title="React Router" aria-label="react-router icon" className="icon text-red" />
-          <span className={text}>React Router</span>
+          <Node title="NodeJS" aria-label="nodejs icon" className="icon text-green" />
+          <span className={text}>NodeJS</span>
         </div>
       </div>
     </section>

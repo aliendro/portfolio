@@ -20,7 +20,7 @@ import { ReactComponent as Jest } from 'assets/stack/jest.svg';
 import { ReactComponent as Nextjs } from 'assets/stack/nextjs.svg';
 import { ReactComponent as TestingLibrary } from 'assets/stack/testing.svg';
 import { ReactComponent as Git } from 'assets/stack/git.svg';
-import { ReactComponent as Router } from 'assets/stack/router.svg';
+import { ReactComponent as Node } from 'assets/stack/node.svg';
 
 // Screenshots
 import animehub from 'assets/screenshots/ahub.webp';
@@ -44,7 +44,7 @@ export {
   Nextjs,
   TestingLibrary,
   Git,
-  Router,
+  Node,
   animehub,
   sthetica,
 };
