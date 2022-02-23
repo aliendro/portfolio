@@ -20,7 +20,7 @@ export default function Projects() {
       'This is a simple artwork ecommerce. It was created using Vite, React, Typescript, CommerceJS, Redux Toolkit and TailwindCSS. Artwork provided by sthethica',
     stack: 'React, Typescript, Redux (Redux Toolkit), React Router, TailwindCSS, CommerceJS.',
     url: {
-      application: 'https://sthethica.netlify.app',
+      application: 'https://sthetica.netlify.app',
       repository: 'https://github.com/aliendro/sthetica',
     },
   };
