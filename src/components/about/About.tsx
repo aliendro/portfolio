@@ -11,6 +11,7 @@ import {
   Tailwind,
   TestingLibrary,
   Typescript,
+  resume,
 } from 'assets';
 
 export default function About() {
@@ -32,11 +33,16 @@ export default function About() {
           applications. I am focused to deliver responsive, scalable and accessible products with
           great user experience.
         </h4>
-        <div className="p-10 text-center md:col-start-2">
+        <a
+          href={resume}
+          target="_blank"
+          rel="noreferrer"
+          className="p-10 text-center md:col-start-2"
+        >
           <button type="button" aria-label="resume" className="button w-48 bg-green">
             Check out my resume
           </button>
-        </div>
+        </a>
       </section>
       <section className="section">
         <h1 id="stack" className="heading text-yellow">

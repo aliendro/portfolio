@@ -26,6 +26,9 @@ import { ReactComponent as Node } from 'assets/stack/node.svg';
 import animehub from 'assets/screenshots/ahub.webp';
 import sthetica from 'assets/screenshots/sthethica.webp';
 
+// Resume
+import resume from 'assets/resume.pdf';
+
 export {
   Menu,
   Close,
@@ -47,4 +50,5 @@ export {
   Node,
   animehub,
   sthetica,
+  resume,
 };

@@ -1,6 +1,6 @@
 import { BaseSyntheticEvent, useEffect, useState } from 'react';
 
-import { Menu, Close, Linkedin, Github, Email } from 'assets';
+import { Menu, Close, Linkedin, Github, Email, resume } from 'assets';
 import useScroll from 'hooks/useScroll';
 
 const links = {
@@ -65,7 +65,7 @@ export default function Navbar() {
             </a>
           </li>
           <li className={navItem}>
-            <a href="#resume" onClick={handleClick}>
+            <a href={resume} target="_blank" rel="noreferrer">
               Resume
             </a>
           </li>
