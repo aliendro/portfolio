@@ -1,7 +1,7 @@
 import { Linkedin, Github, Email } from 'assets';
 
 const links = {
-  linkedin: 'https://www.linkedin.com/in/michael-aliendro-484578216/',
+  linkedin: 'https://www.linkedin.com/in/aliendro',
   github: 'https://www.github.com/aliendro',
   email: 'mailto:contato@aliendro.com',
 };
