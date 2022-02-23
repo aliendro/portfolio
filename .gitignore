@@ -4,6 +4,8 @@ dist
 dist-ssr
 *.local
 build
+package-lock.json
+yarn.lock
 
 # Local Netlify folder
 .netlify
