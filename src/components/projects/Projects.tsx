@@ -6,7 +6,7 @@ export default function Projects() {
     title: 'Animehub',
     img: animehub,
     description:
-      'This is a simple side project using Kitsu API to explore anime titles. It was created using Vite, React and Redux Toolkit.',
+      'A personal side project made from scratch with React, Redux and PostCSS using Kitsu API. It is designed to showcase my web development skills, especially React and CSS.',
     stack: 'React, Typescript, Redux (Redux Toolkit), React Router, CSS Modules and PostCSS.',
     url: {
       application: 'https://ahub.netlify.app',
@@ -17,7 +17,7 @@ export default function Projects() {
     title: 'Sthetica',
     img: sthetica,
     description:
-      'This is a simple artwork ecommerce. It was created using Vite, React, Typescript, CommerceJS, Redux Toolkit and TailwindCSS. Artwork provided by sthethica',
+      'An artwork ecommerce project made with React, Redux, TailwindCSS, CommerceJS. It also has Stripe integration, ensuring security best practices in payment processing.',
     stack: 'React, Typescript, Redux (Redux Toolkit), React Router, TailwindCSS, CommerceJS.',
     url: {
       application: 'https://sthetica.netlify.app',
