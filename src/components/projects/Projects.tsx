@@ -6,7 +6,7 @@ export default function Projects() {
     title: 'Animehub',
     img: animehub,
     description:
-      'A personal side project made from scratch with React, Redux and PostCSS using Kitsu API. It is designed to showcase my web development skills, especially React and CSS.',
+      'A personal side project made from scratch with React, Redux and PostCSS using Kitsu API to explore anime titles. It is designed to showcase my web development skills, especially React and CSS.',
     stack: 'React, Typescript, Redux (Redux Toolkit), React Router, CSS Modules and PostCSS.',
     url: {
       application: 'https://ahub.netlify.app',
