@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react';
 
 export default function useScroll() {
-  const [visible, setVisible] = useState<boolean>(true);
-  const [current, setCurrent] = useState<Number>(0);
+  const [navbar, setNavbar] = useState<boolean>(true);
+  const [arrowUp, setArrowUp] = useState<boolean>(false);
+  const [current, setCurrent] = useState<number>(0);
 
   const handleScroll = () => {
     if (window.scrollY === 0) {
-      setVisible(true);
+      setNavbar(true);
     }
     if (window.scrollY > current) {
-      setVisible(false);
+      setNavbar(false);
+    }
+    if (window.scrollY > 100) {
+      setArrowUp(true);
     } else {
-      setVisible(true);
+      setNavbar(true);
+      setArrowUp(false);
     }
     setCurrent(window.scrollY);
   };
@@ -19,7 +24,7 @@ export default function useScroll() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [current]);
+  });
 
-  return visible;
+  return [navbar, arrowUp] as const;
 }

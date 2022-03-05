@@ -2,7 +2,7 @@
 import { ReactComponent as Menu } from 'assets/actions/menu.svg';
 import { ReactComponent as Close } from 'assets/actions/close.svg';
 import { ReactComponent as Email } from 'assets/actions/email.svg';
-import { ReactComponent as Top } from 'assets/actions/top.svg';
+import { ReactComponent as ArrowUp } from 'assets/actions/arrowup.svg';
 
 // Companies
 import { ReactComponent as Linkedin } from 'assets/companies/linkedin.svg';
@@ -20,7 +20,7 @@ import { ReactComponent as Jest } from 'assets/stack/jest.svg';
 import { ReactComponent as Nextjs } from 'assets/stack/nextjs.svg';
 import { ReactComponent as TestingLibrary } from 'assets/stack/testing.svg';
 import { ReactComponent as Git } from 'assets/stack/git.svg';
-import { ReactComponent as Node } from 'assets/stack/node.svg';
+import { ReactComponent as Nodejs } from 'assets/stack/nodejs.svg';
 
 // Screenshots
 import animehub from 'assets/screenshots/ahub.webp';
@@ -33,7 +33,7 @@ export {
   Menu,
   Close,
   Email,
-  Top,
+  ArrowUp,
   Linkedin,
   Github,
   Css,
@@ -47,7 +47,7 @@ export {
   Nextjs,
   TestingLibrary,
   Git,
-  Node,
+  Nodejs,
   animehub,
   sthetica,
   resume,

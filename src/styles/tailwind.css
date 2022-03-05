@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .section {
+    @apply grid cursor-default gap-5 p-4 text-foreground md:grid-cols-[1fr_1.5fr_1fr] md:p-0;
+  }
+  .button {
+    @apply w-32 rounded-lg p-4 text-center text-[16px] font-semibold text-primary transition-opacity duration-200;
+  }
+  .heading {
+    @apply p-10 text-center text-3xl font-bold tracking-wide md:col-start-2;
+  }
+  .icon {
+    @apply m-5 h-20 w-20;
+  }
+  .nav-item {
+    @apply p-5 decoration-green decoration-2 underline-offset-4 hover:cursor-pointer hover:text-green hover:underline;
+  }
+  .text {
+    @apply after:font-bold after:tracking-wide;
+  }
+}
