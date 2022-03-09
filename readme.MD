@@ -30,7 +30,7 @@ npm install
 npm run dev
 ```
 
-#### Access animehub using your web browser
+#### Access website using your web browser
 
 ```
 https://localhost:3000
