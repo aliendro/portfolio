@@ -27,7 +27,7 @@ import animehub from 'assets/screenshots/ahub.webp';
 import sthetica from 'assets/screenshots/sthethica.webp';
 
 // Resume
-import resume from 'assets/resume.pdf';
+const resume = 'https://drive.google.com/file/d/19ggfc7ttb_A0AmPJpT2c-VgIBBul-WAT/view?usp=sharing';
 
 export {
   Menu,

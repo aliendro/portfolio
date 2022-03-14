@@ -24,7 +24,7 @@ export default function Projects() {
   };
   return (
     <section id="projects" className="section">
-      <h1 className="heading text-cyan">Projects</h1>
+      <h2 className="heading text-cyan">Projects</h2>
       <ProjectItem item={animeHub} />
       <ProjectItem item={ecommerce} />
     </section>

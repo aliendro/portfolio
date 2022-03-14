@@ -1,10 +1,25 @@
 import { ArrowUp } from 'assets';
+import { useEffect, useState } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 
-type TopProps = {
-  visible: boolean;
-} & Partial<HTMLButtonElement>;
+export default function Top() {
+  smoothscroll.polyfill();
+  
+  const [visible, setVisible] = useState(false);
 
-export default function Top({ visible }: TopProps) {
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setVisible(true);
+    } else {
+      setVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     window.history.pushState({}, '', '/');

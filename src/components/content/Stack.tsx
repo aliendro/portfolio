@@ -15,8 +15,8 @@ import {
 
 export default function Stack() {
   return (
-    <section className="section" id="stack">
-      <h1 className="heading text-yellow">Tech stack</h1>
+    <section id="stack" className="section">
+      <h2 className="heading text-yellow">Tech stack</h2>
       <div className="grid grid-cols-2 place-items-center gap-5 text-center md:col-start-2 md:grid-cols-3 md:gap-10">
         <div className="text after:content-['Javascript']">
           <Javascript aria-label="javascript icon" className="icon text-yellow" />

@@ -1,20 +1,33 @@
-import { RefObject, useEffect, useState } from 'react';
+import { BaseSyntheticEvent, RefObject, useEffect, useState } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 
-export default function useMobileMenu(ref: RefObject<HTMLUListElement>) {
-  const [active, setVisible] = useState(false);
+export default function useMobileMenu(ref: RefObject<HTMLButtonElement>) {
+  const [active, setActive] = useState(false);
+  smoothscroll.polyfill();
 
-  const open = () => setVisible(true);
+  const toggle = () => setActive((prev) => !prev);
 
-  const close = () => setVisible(false);
+  const onClick = (event: MouseEvent | BaseSyntheticEvent) => {
+    console.log(event.target.id);
+    if (ref.current && ref.current.contains(event.target)) {
+      toggle();
+    } else {
+      setActive(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('click', onClick);
+    return () => window.removeEventListener('click', onClick);
+  }, [active]);
 
   useEffect(() => {
     if (active) {
       document.body.style.overflow = 'hidden';
-      ref.current?.focus();
     } else {
       document.body.style.overflow = 'unset';
     }
   }, [active]);
 
-  return [active, open, close] as const;
+  return [active, toggle] as const;
 }

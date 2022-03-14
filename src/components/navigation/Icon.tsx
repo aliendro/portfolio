@@ -3,7 +3,7 @@ import { HTMLAttributes } from 'react';
 
 type IconProps = {
   name: 'linkedin' | 'github' | 'email';
-} & Partial<HTMLAttributes<'li'>>;
+} & HTMLAttributes<'li'>;
 
 export default function Icon({ name, className }: IconProps) {
   const url = {

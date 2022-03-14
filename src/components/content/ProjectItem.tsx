@@ -7,16 +7,16 @@ type ProjectItemProps = {
 export default function ProjectItem({ item }: ProjectItemProps) {
   return (
     <div className="mb-10 flex flex-col gap-5 md:col-start-2">
-      <h2 className="pl-4 text-left text-xl font-bold tracking-wide md:col-start-2">
+      <h3 className="pl-4 text-left text-xl font-bold tracking-wide md:col-start-2">
         {item.title}
-      </h2>
-      <div className="flex justify-center p-4 md:col-start-2">
+      </h3>
+      <div className="flex  w-full justify-center p-4 md:col-start-2">
         <img
-          className="w-full rounded-lg ring-2 ring-secondary"
+          className=" aspect-video rounded-lg ring-2 ring-secondary"
           width="600px"
           height="480px"
           src={item.img}
-          alt="ahub screenshot"
+          alt="application screenshot"
           loading="lazy"
         />
       </div>
