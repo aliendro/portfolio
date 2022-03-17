@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <header
       className={`${
-        visible ? 'transform-none' : '-translate-y-20'
+        visible ? 'transform-none' : '-translate-y-28'
       } fixed top-0 z-10 w-full bg-secondary font-mono text-sm text-foreground transition-all duration-500`}
     >
       <nav className="m-5 mx-14 flex items-center">
@@ -52,12 +52,12 @@ export default function Navbar() {
           }`}
         >
           <li className="nav-item">
-            <button type="button" onClick={scrollInto('stack')}>
+            <button className="hover:underline" type="button" onClick={scrollInto('stack')}>
               Tech stack
             </button>
           </li>
           <li className="nav-item">
-            <button type="button" onClick={scrollInto('projects')}>
+            <button className="hover:underline" type="button" onClick={scrollInto('projects')}>
               Projects
             </button>
           </li>
