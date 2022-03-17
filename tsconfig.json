@@ -18,6 +18,13 @@
     "baseUrl": "./src",
     "types": ["vite-plugin-svgr/client"]
   },
-  "include": ["src", "vite.config.ts", "tailwind.config.js", "postcss.config.js", "src/types"],
+  "include": [
+    "src",
+    "vite.config.ts",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "src/types",
+    "jest.config.ts"
+  ],
   "exclude": ["node_modules"]
 }
