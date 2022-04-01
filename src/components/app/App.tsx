@@ -11,6 +11,7 @@ import Stack from 'components/content/Stack';
 import smoothscroll from 'smoothscroll-polyfill';
 
 export default function App() {
+  smoothscroll.polyfill();
   return (
     <div className="flex min-h-screen flex-col gap-12 bg-primary md:gap-20">
       <Navbar />

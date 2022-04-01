@@ -7,3 +7,8 @@ build
 
 # Local Netlify folder
 .netlify
+
+# Testing
+__mocks__
+.jest
+coverage

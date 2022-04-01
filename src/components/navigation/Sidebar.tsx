@@ -1,11 +1,4 @@
-import { Linkedin, Github, Email } from 'assets';
 import Icon from './Icon';
-
-const links = {
-  linkedin: 'https://www.linkedin.com/in/aliendro',
-  github: 'https://www.github.com/aliendro',
-  email: 'mailto:contato@aliendro.com',
-};
 
 export default function Sidebar() {
   return (

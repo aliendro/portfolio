@@ -1,12 +1,10 @@
 import { Menu, Close, resume } from 'assets';
 import useMobileMenu from 'hooks/useMobileMenu';
 
-import smoothscroll from 'smoothscroll-polyfill';
 import { useEffect, useRef, useState } from 'react';
 import Icon from './Icon';
 
 export default function Navbar() {
-  smoothscroll.polyfill();
   const menuRef = useRef<HTMLButtonElement>(null);
   const [active] = useMobileMenu(menuRef);
   const [visible, setVisible] = useState(true);
@@ -41,7 +39,12 @@ export default function Navbar() {
     >
       <nav className="m-5 mx-14 flex items-center">
         <div className="mr-auto flex h-8 w-8 items-center rounded-t-2xl rounded-br-2xl border-2 border-green p-2 font-sans font-extrabold ring-2 ring-purple ring-offset-8 ring-offset-secondary transition-colors duration-200 hover:border-purple hover:ring-green" />
-        <button ref={menuRef} type="button" className="z-10 h-10 w-10" id="menubutton">
+        <button
+          ref={menuRef}
+          type="button"
+          aria-label="Activate mobile menu"
+          className="z-10 block h-10 w-10 md:hidden"
+        >
           <Menu className={`h-10 w-10 text-green md:hidden ${active ? 'hidden' : 'block'}`} />
           <Close className={`h-10 w-10 text-green md:hidden ${active ? 'block' : 'hidden'}`} />
         </button>
@@ -66,11 +69,13 @@ export default function Navbar() {
               Resume
             </a>
           </li>
-          <ul className="fixed bottom-0 flex md:hidden">
-            <Icon className="nav-item" name="linkedin" />
-            <Icon className="nav-item" name="github" />
-            <Icon className="nav-item" name="email" />
-          </ul>
+          <li className="fixed bottom-0 md:hidden">
+            <ul className="flex">
+              <Icon className="nav-item" name="linkedin" />
+              <Icon className="nav-item" name="github" />
+              <Icon className="nav-item" name="email" />
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>
